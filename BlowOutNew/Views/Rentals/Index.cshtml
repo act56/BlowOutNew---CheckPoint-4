@@ -27,11 +27,10 @@
     <div class="col">
         @*@Html.ActionLink(item.Desc, "Details", "Rentals", new { item.Desc }, null)*@
 
-        <a href=" @Url.Action("Details", "Rentals", new { item.Desc }, null)">
-            @item.Desc
+        <a href=" @Url.Action("Details", "Rentals", new {instName = item.Desc} , null )">@item.Desc
             <img src="@Url.Content(image)" height="150">
         </a>
-
+                
     </div>
 
         ViewBag.temp = item.Desc;
