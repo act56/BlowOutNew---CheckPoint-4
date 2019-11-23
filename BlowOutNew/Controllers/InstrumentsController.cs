@@ -18,7 +18,8 @@ namespace BlowOutNew.Controllers
         // GET: Instruments
         public ActionResult Index()
         {
-            return View(db.Instruments.ToList());
+            var instruments = db.Instruments.Include(i => i.client);
+            return View(instruments.ToList());
         }
 
         // GET: Instruments/Details/5
@@ -39,6 +40,7 @@ namespace BlowOutNew.Controllers
         // GET: Instruments/Create
         public ActionResult Create()
         {
+            ViewBag.clientID = new SelectList(db.Clients, "clientID", "first_Name");
             return View();
         }
 
@@ -56,6 +58,7 @@ namespace BlowOutNew.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.clientID = new SelectList(db.Clients, "clientID", "first_Name", instrument.clientID);
             return View(instrument);
         }
 
@@ -71,6 +74,7 @@ namespace BlowOutNew.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.clientID = new SelectList(db.Clients, "clientID", "first_Name", instrument.clientID);
             return View(instrument);
         }
 
@@ -87,6 +91,7 @@ namespace BlowOutNew.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.clientID = new SelectList(db.Clients, "clientID", "first_Name", instrument.clientID);
             return View(instrument);
         }
 

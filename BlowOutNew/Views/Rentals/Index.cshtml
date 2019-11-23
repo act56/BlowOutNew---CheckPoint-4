@@ -1,26 +1,35 @@
-﻿
+﻿@Model BlowOutNew.Model.Instrument
+
 @{
     ViewBag.Title = "Index";
 }
 @*// jQuery*@
-
 @*This page displays all of the instruments and allows the user to select the instrument they want to learn more about.  By clicking
-on the instrument, they pass through an instrumentName, that tells the system what to display on the Rentals/Details page.*@
+    on the instrument, they pass through an instrumentName, that tells the system what to display on the Rentals/Details page.*@
+
+
 
 <h3 style="padding-bottom:60px; text-align: center;">Click the image of an instrument you're interested in learning more about renting.</h3>
-
 <div class="contain">
-    <div class="col">
-        <a href="@Url.Action("Details", "Rentals", new { instrumentName = "Trumpet"})">
+    @foreach (var item in Model)
+    {
+        var image =
+            item.instrument.image;
+
+            <img src="@Url.Content(image)" height="150" />
+        @Html.ActionLink("Buy Now", "Details", "Rentals", new { ID = item.instrumentID }, null)
+    }
+    @*<div class="col">
+        <a href="@Html.ActionLink("Buy Now", "Details", "Rentals", new {  })">
             <img src="~/Content/images/Instruments/Trumpet.jpg" height="150" />
             <p>Trumpet</p>
         </a>
     </div>
     <div class="col">
         <a href="@Url.Action("Details", "Rentals", new { instrumentName = "Trombone"})">
-            <img src="~/Content/images/Instruments/Trombone.jpg" height="150"/>
+            <img src="~/Content/images/Instruments/Trombone.jpg" height="150" />
             <p>Trombone</p>
-            </a>
+        </a>
     </div>
     <div class="col">
         <a href="@Url.Action("Details", "Rentals", new { instrumentName = "Tuba"})">
@@ -30,7 +39,7 @@ on the instrument, they pass through an instrumentName, that tells the system wh
     </div>
     <div class="col">
         <a href="@Url.Action("Details", "Rentals", new { instrumentName = "Flute"})">
-            <img src="~/Content/images/Instruments/Flute.jpg" height="150"/>
+            <img src="~/Content/images/Instruments/Flute.jpg" height="150" />
             <p>Flute</p>
         </a>
     </div>
@@ -42,8 +51,8 @@ on the instrument, they pass through an instrumentName, that tells the system wh
     </div>
     <div class="col">
         <a href="@Url.Action("Details", "Rentals", new { instrumentName = "Saxophone"})">
-            <img src="~/Content/images/Instruments/Saxophone.jpg" height="150"/>
+            <img src="~/Content/images/Instruments/Saxophone.jpg" height="150" />
             <p>Saxophone</p>
         </a>
-    </div>
+    </div>*@
 </div>

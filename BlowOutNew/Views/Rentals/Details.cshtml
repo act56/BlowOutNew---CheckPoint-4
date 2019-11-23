@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<BlowOutNew.Models.Instrument>
 @{
     ViewBag.Title = "Details";
 }
@@ -33,6 +33,11 @@
 
                             <p style="font-weight: 500; font-size:large;"> $55 a month</p>
                             <p style="font-size:medium;">@Html.Raw((String)ViewBag.ContractFull)</p>
+
+                            <button style="background-color:darksalmon">
+                                @Html.ActionLink("Buy Now", "Details", "Rentals", new { })                                
+                            </button>
+
                         </div>
                     </div>
                 </div>

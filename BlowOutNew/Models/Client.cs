@@ -46,7 +46,7 @@ namespace BlowOutNew.Models
         public string email { get; set; }
 
         [Required]
-        [RegularExpression(@"^(\([0-9]{3}\) |[0-9]{3}-)[0-9]{3}-[0-9]{4}$", ErrorMessage = "Phone number must be in the format (xxx) xxx-xxxx")]
+        [RegularExpression(@"^((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}", ErrorMessage = "Phone number must be in the following format (xxx) xxx-xxxx")]
         [Display(Name = "Phone Number")]
         public string phone { get; set; }
     }

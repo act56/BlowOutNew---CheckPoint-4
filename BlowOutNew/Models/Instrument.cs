@@ -24,7 +24,13 @@ namespace BlowOutNew.Models
         [Display(Name = "Monthly Rental Price")]
         public string price { get; set; }
 
-        [HiddenInput(DisplayValue = false)]
-        public int clientID { get; set; }
+        [ForeignKey("client")]
+        //[HiddenInput(DisplayValue = false)]
+        public virtual int clientID { get; set; }
+        public virtual Client client { get; set; }
+
+
+        [HiddenInput(DisplayValue =false)]
+        public string image { get; set; }
     }
 }
