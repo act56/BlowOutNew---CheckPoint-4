@@ -1,0 +1,10 @@
+﻿
+@{
+    ViewBag.Title = "Email";
+}
+
+
+@*Per the assignment, this information is passed to the view through the ContactController*@
+
+<p>Thank you, @Html.Raw((String)ViewBag.Name).  We will send an email to @Html.Raw((String)ViewBag.Email)</p>
+

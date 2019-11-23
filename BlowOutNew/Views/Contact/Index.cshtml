@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+
+}
+
+@*This page is not currently being used*@
+    <h2><strong>Contact Form</strong></h2>
+
+    <div id="contact" class="container">
+        <form action="~/Views/Contact/Email.cshtml"> <!--this is where to enter the page where this user will be sent (Thank you page)-->
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" name="firstName" placeholder="">
+
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" name="lastName" placeholder="">
+
+            <label for="phone">Phone Number</label>
+            <input type="text" id="phone" name="phoneNumber" placeholder="">
+
+            <label for="email">Email</label>
+            <input type="text" id="email" name="email" placeholder="">
+
+            <label for="instrument">What instrument do you have a question about?</label>
+            <select id="insrument" name="instrument">
+                <option value="trumpuet">Trumpet</option>
+                <option value="trombone">Trombone</option>
+                <option value="tuba">Tuba</option>
+                <option value="flute">Flute</option>
+                <option value="clarinet">Clarinet</option>
+                <option value="saxophone">Saxophone</option>
+            </select>
+
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" placeholder="Enter a subject for the email">
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Enter your message here" style="height:200px"></textarea>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <p style="font-size:large">Questions? Please call Support at <strong><u>801-555-1212.</u></strong> Thank you!</p>
+
+

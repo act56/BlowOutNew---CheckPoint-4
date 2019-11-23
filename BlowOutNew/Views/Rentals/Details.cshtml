@@ -1,0 +1,234 @@
+﻿
+@{
+    ViewBag.Title = "Details";
+}
+
+@*This page is where all of the pricing details are displayed.  It also includes the contract details.*@
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Lato:700&display=swap" rel="stylesheet">
+    <link href="../fonts/IcoMoon-Free-master/Font/IcoMoon-Free.ttf') format('truetype)";>
+    <link href="~/Content/Styles.css" rel="stylesheet" />
+</head>
+@Html.ActionLink("Back To Instruments", "Index")
+<h1>Instrument Rental Pricing</h1>
+<p class="jumbotron" style="text-align:center; font-size:14px; background-color:#f1f1f1; padding:10px;">Click on the "New" or "Used" to find the pricing for the instrument selected.</p>
+<!-- ACCORDIAN TABS -->
+<div class="container">
+    <div class="content" style="margin:auto;">
+
+        <div id="Trumpet" style="display:none;">
+            <h4 class="instrumentTitle">TRUMPET</h4>
+            <div style="text-align:center;"><img src="~/Content/images/Instruments/Trumpet.jpg" height="150" /></div>
+            <div class="accordion">
+                <!--Accordion 1-->
+                <div>
+                    <input id="trumNew" name="" type="checkbox" style="display: none" />
+                    <label for="trumNew">NEW</label>
+                    <div class="article ac-medium">
+                        <div class="article_body clear-fix">
+                            <!--Insert Accordion 1 content here.-->
+
+                            <p style="font-weight: 500; font-size:large;"> $55 a month</p>
+                            <p style="font-size:medium;">@Html.Raw((String)ViewBag.ContractFull)</p>
+                        </div>
+                    </div>
+                </div>
+                <!--Accordion 2-->
+                <div>
+                    <input id="TrumUsed" name="accordion-1" type="checkbox" style="display: none" />
+                    <label for="TrumUsed">USED</label>
+                    <div class="article ac-medium">
+                        <div class="article_body clear-fix">
+                            <!--Insert Accordion 2 content here.-->
+                            <p style="font-weight: 500; font-size:large;"> $25 a month</p>
+                            <p style="font-size:medium;">@Html.Raw((String)ViewBag.ContractFull)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="Trombone" style="display:none;">
+            <h4 class="instrumentTitle">TROMBONE</h4>
+            <div style="text-align:center;"><img src="~/Content/images/Instruments/Trombone.jpg" height="150" /></div>
+                <div class="accordion">
+                    <!--Accordion 1-->
+                    <div>
+                        <input id="TromNew" name="accordion-1" type="checkbox" style="display: none" />
+                        <label for="TromNew">NEW</label>
+                        <div class="article ac-medium">
+                            <div class="article_body clear-fix">
+                                <!--Insert Accordion 1 content here.-->
+                                <p style="font-weight: 500; font-size:large;"> $60 a month</p>
+                                <p style="font-size:medium;">@Html.Raw((String)ViewBag.ContractFull)</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Accordion 2-->
+                    <div>
+                        <input id="TromUsed" name="accordion-1" type="checkbox" style="display: none" />
+                        <label for="TromUsed">USED</label>
+                        <div class="article ac-medium">
+                            <div class="article_body clear-fix">
+                                <!--Insert Accordion 2 content here.-->
+                                <p style="font-weight: 500; font-size:large;"> $35 a month</p>
+                                <p style="font-size:medium;">@Html.Raw((String)ViewBag.ContractFull)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>            
+        </div>
+
+
+        <div id="Tuba" style="display:none;">
+            <h4 class="instrumentTitle">TUBA</h4>
+            <div style="text-align:center;"><img src="~/Content/images/Instruments/Tuba.jpg" height="150"></div>
+                <div class="accordion">
+                    <!--Accordion 1-->
+                    <div>
+                        <input id="TubaNew" name="accordion-1" type="checkbox" style="display: none" />
+                        <label for="TubaNew">NEW</label>
+                        <div class="article ac-medium">
+                            <div class="article_body clear-fix">
+                                <!--Insert Accordion 1 content here.-->
+                                <p style="font-weight: 500; font-size:large;"> $70 a month</p>
+                                <p style="font-size:medium;">@Html.Raw((String)ViewBag.ContractFull)</p>
+                            </div>
+                        </div>
+                    </div>
+                <!--Accordion 2-->
+                <div>
+                <input id="TubaUsed" name="accordion-1" type="checkbox" style="display: none" />
+                <label for="TubaUsed">USED</label>
+                <div class="article ac-medium">
+                    <div class="article_body clear-fix">
+                        <!--Insert Accordion 1 content here.-->
+                        <p style="font-weight: 500; font-size:large;"> $50 a month</p>
+                        <p style="font-size:medium;">@Html.Raw((String)ViewBag.ContractFull)</p>
+                    </div>
+                </div>
+            </div>
+        </div>    
+</div>
+          
+
+        <div id="Flute" style="display:none;">
+            <h4 class="instrumentTitle">FLUTE</h4>
+            <div style="text-align:center;"><img src="~/Content/images/Instruments/Flute.jpg" height="150"></div>
+                <div class="accordion">
+                    <!--Accordion 1-->
+                    <div>
+                        <input id="FluteNew" name="accordion-1" type="checkbox" style="display: none" />
+                        <label for="FluteNew">NEW</label>
+                        <div class="article ac-medium">
+                            <div class="article_body clear-fix">
+                                <!--Insert Accordion 1 content here.-->
+
+                                <p style="font-weight: 500; font-size:large;"> $40 a month</p>
+                                <p style="font-size:medium;">@Html.Raw((String)ViewBag.ContractFull)</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Accordion 2-->
+                    <div>
+                        <input id="FluteUsed" name="accordion-1" type="checkbox" style="display: none" />
+                        <label for="FluteUsed">USED</label>
+                        <div class="article ac-medium">
+                            <div class="article_body clear-fix">
+                                <!--Insert Accordion 2 content here.-->
+                                <p style="font-weight: 500; font-size:large;"> $25 a month</p>
+                                <p style="font-size:medium;">@Html.Raw((String)ViewBag.ContractFull)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+        </div>
+
+
+        <div id="Clarinet" style="display:none;">
+            <h4 class="instrumentTitle">CLARINET</h4>
+            <div style="text-align:center;"><img src="~/Content/images/Instruments/Clarinet.jpg" height="150"/></div>
+                <div class="accordion">
+                    <!--Accordion 1-->
+                    <div>
+                        <input id="ClarNew" name="accordion-1" type="checkbox" style="display: none" />
+                        <label for="ClarNew">NEW</label>
+                        <div class="article ac-medium">
+                            <div class="article_body clear-fix">
+                                <!--Insert Accordion 1 content here.-->
+
+                                <p style="font-weight: 500; font-size:large;"> $35 a month</p>
+                                <p style="font-size:medium;">@Html.Raw((String)ViewBag.ContractFull)</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Accordion 2-->
+                    <div>
+                        <input id="ClarUsed" name="accordion-1" type="checkbox" style="display: none" />
+                        <label for="ClarUsed">USED</label>
+                        <div class="article ac-medium">
+                            <div class="article_body clear-fix">
+                                <!--Insert Accordion 2 content here.-->
+                                <p style="font-weight: 500; font-size:large;"> $27 a month</p>
+                                <p style="font-size:medium;">@Html.Raw((String)ViewBag.ContractFull)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+        </div>
+
+
+        <div id="Saxophone" style="display:none;">
+            <h4 class="instrumentTitle">SAXOPHONE</h4>
+            <div style="text-align:center;"><img src="~/Content/images/Instruments/Saxophone.jpg" height="150" /></div>
+                <div class="accordion">
+                    <!--Accordion 1-->
+                    <div>
+                        <input id="SaxNew" name="accordion-1" type="checkbox" style="display: none" />
+                        <label for="SaxNew">NEW</label>
+                        <div class="article ac-medium">
+                            <div class="article_body clear-fix">
+                                <!--Insert Accordion 1 content here.-->
+
+                                <p style="font-weight: 500; font-size:large;"> $42 a month</p>
+                                <p style="font-size:medium;">@Html.Raw((String)ViewBag.ContractFull)</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Accordion 2-->
+                    <div>
+                        <input id="SaxUsed" name="accordion-1" type="checkbox" style="display: none" />
+                        <label for="SaxUsed">USED</label>
+                        <div class="article ac-medium">
+                            <div class="article_body clear-fix">
+                                <!--Insert Accordion 2 content here.-->
+                                <p style="font-weight: 500; font-size:large;"> $30 a month</p>
+                                <p style="font-size:medium;">@Html.Raw((String)ViewBag.ContractFull)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+        </div>
+    </div>
+ </div>
+
+@*This jquery script is what displays the divs above.  This is driven by the instrument id that is passed through from the route/index
+page.*@
+
+<script>
+
+    var instrumentName = '#@Html.Raw((String)ViewBag.Name)';
+        var element = $(instrumentName);
+        debugger;
+    element.show();
+
+
+</script>
+

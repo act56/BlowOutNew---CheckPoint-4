@@ -1,0 +1,19 @@
+﻿@Model  IENumerable<BlowOutNew.Models.Instrument>
+
+<h2>Rentals</h2>
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+
+        @foreach (var item in Model)
+        {
+
+                    @Html.ActionLink(item.name, "Create", new { id=item.InstrumentID })
+            <hr />
+
+        }
+
+        </table>
+

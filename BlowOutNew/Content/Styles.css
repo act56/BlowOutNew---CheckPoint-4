@@ -1,0 +1,227 @@
+﻿body {
+    text-decoration:inherit;
+}
+
+.container {
+    margin:auto;
+    max-width: 1000px;
+}
+
+.myFooterText {
+    font-family: 'Courgette', cursive;
+}
+
+html, body, h1, h2, h3, h4 {
+    font-family: "Lato", sans-serif !important;
+
+}
+
+.mySlides {
+    display: none
+}
+
+.w3-tag, .fa {
+    cursor: pointer
+}
+
+.w3-tag {
+    height: 15px;
+    width: 15px;
+    padding: 0;
+    margin-top: 6px;
+}
+
+.w3-large {
+    font-size:18px !important;
+}
+
+.w3-top, .w3-bottom {
+    position: relative !important;
+}
+
+.w3-top {
+   margin-bottom:50px;
+}
+
+.width1000{
+    margin:auto;
+    width:75%;
+}
+/* Accordion styles */
+.accordion {
+    margin: 30px;
+}
+
+.accordion h1 {
+    color: #000;
+    font-weight: 400;
+    font-size: 22px;
+    margin-bottom: 10px
+}
+
+.accordion label {
+    cursor: pointer;
+    display: block;
+    color: #000;
+    font-weight: 400;
+    z-index: 20;
+    min-height: 5px;
+    padding: 20px 30px 20px 30px;
+    margin: 20px 0 0 0;
+    position: relative;
+    font-size: 22px;
+    border: 1px solid rgba(0, 0, 0, .1);
+    border-radius: 0px;
+    box-sizing: border-box;
+}
+
+    .accordion label:before {
+        font-family: 'IcoMoon-Free';
+        content: 'circle-right';
+        font-weight: bolder;
+        float: right;
+    }
+@font-face {
+    font-family: 'IcoMoon-Free';
+    src: url('../fonts/IcoMoon-Free-master/Font/IcoMoon-Free.ttf') format('truetype');
+}
+
+
+.accordion input:checked + label:before {
+    font-family: 'IcoMoon-Free';
+    content: "circle-down";
+    transition: 0.5s;
+}
+
+.accordion input + label {
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.accordion input:checked + label,
+/* .accordion input:checked + label:hover, */
+.accordion input:checked + .article {
+    background: #f6f7f8;
+    /* color: #3d7489; */
+    /* box-shadow:   0px 0px 0px 1px rgba(155,155,155,0.3),   0px 2px 2px rgba(0,0,0,0.1); */
+}
+
+.accordion input {
+    display: none;
+}
+
+.accordion .article_body {
+    padding: 30px;
+}
+
+.accordion .article {
+    background: #f6f7f8;
+    overflow: hidden;
+    height: 0px;
+    border: 1px solid rgba(0, 0, 0, .1);
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.accordion input:checked ~ .article {
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+
+    .accordion input:checked ~ .article.ac-medium {
+        height: auto;
+    }
+
+.accordion ul {
+    margin-left: 21px;
+    color: #96999d;
+    font-weight: 300;
+    font-size: 15px;
+    font-size: 1.07143rem;
+    letter-spacing: 0.375px;
+    line-height: 1.5em;
+}
+
+.accordion li {
+    margin-bottom: 5px !important;
+}
+
+.accordion .list-unstyled {
+    margin-left: 6px;
+}
+
+.accordion #ingredients_coffee,
+.accordion #ingredients_creamer {
+    margin-right: 0.85714% !important;
+}
+
+.instrumentTitle {
+    text-align: center;
+    background-color: #01b5ce;
+    padding: 20px;
+    color:white;
+}
+
+/*GRID CSS STARTS*/
+
+.contain {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col {
+    flex: 1;
+    min-width: 33%;
+    text-align: center;
+    vertical-align: bottom;
+}
+
+@media (max-width:500px) {
+    .col {
+        min-width: 50%;
+    }
+}
+
+/*Contact form Start*/
+* {
+    box-sizing: border-box;
+}
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+    input[type=submit]:hover {
+        background-color: #45a049;
+    }
+
+#contact .container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+

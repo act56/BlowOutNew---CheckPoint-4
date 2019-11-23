@@ -1,0 +1,58 @@
+﻿
+<html>
+<head>
+    @*
+            ***Not sure if I need these...will keep just in case***
+            @Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">*@
+
+    <title>@ViewBag.Title - BlowOut Musical Instrument Rentals</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="~/fonts/IcoMoon-Free-master/PNG/16px/018-music.png">
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="~/Content/Styles.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:700|Mr+Dafoe&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Courgette|Nunito&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+    <div class="container">
+        <!-- Links (sit on top) -->
+        <div class="w3-top">
+            <div class="w3-row w3-large w3-light-grey">
+                <div class="w3-col s3">
+                    <a class="w3-button w3-block" href="@Url.Action("Index", "Home")">Home</a>
+                </div>
+                <div class="w3-col s3">
+                    <a class="w3-button w3-block" href="@Url.Action("Index","Rentals")">Rentals</a>
+                </div>
+                <div class="w3-col s3">
+                    <a class="w3-button w3-block" href="@Url.Action("AboutUs", "Contact")">About</a>
+                </div>
+                <div class="w3-col s3">
+                    <a class="w3-button w3-block" href="@Url.Action("Contact", "Contact")">Contact</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container body-content">
+            @RenderBody()
+            <hr />
+            <footer class="myFooterText">
+                <p>&copy; @DateTime.Now.Year - BlowOut Musical Instrument Rentals</p>
+            </footer>
+        </div>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

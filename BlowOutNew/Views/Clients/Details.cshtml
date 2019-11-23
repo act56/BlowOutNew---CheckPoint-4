@@ -1,0 +1,82 @@
+﻿@model BlowOutNew.Models.Client
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Client</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.first_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.first_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.last_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.last_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.city)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.city)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.state)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.state)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.zip)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.zip)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.phone)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.clientID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
