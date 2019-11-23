@@ -1,4 +1,4 @@
-﻿@Model BlowOutNew.Model.Instrument
+﻿@model IEnumerable<BlowOutNew.Models.Instrument>
 
 @{
     ViewBag.Title = "Index";
@@ -7,52 +7,73 @@
 @*This page displays all of the instruments and allows the user to select the instrument they want to learn more about.  By clicking
     on the instrument, they pass through an instrumentName, that tells the system what to display on the Rentals/Details page.*@
 
-
-
 <h3 style="padding-bottom:60px; text-align: center;">Click the image of an instrument you're interested in learning more about renting.</h3>
 <div class="contain">
+    
+
     @foreach (var item in Model)
     {
-        var image =
-            item.instrument.image;
 
-            <img src="@Url.Content(image)" height="150" />
-        @Html.ActionLink("Buy Now", "Details", "Rentals", new { ID = item.instrumentID }, null)
+        var image =
+        item.image;
+
+       if (ViewBag.temp == item.Desc)
+
+        {
+            ViewBag.temp = item.Desc;
+        }
+        else
+        {
+    <div class="col">
+        @*@Html.ActionLink(item.Desc, "Details", "Rentals", new { item.Desc }, null)*@
+
+        <a href=" @Url.Action("Details", "Rentals", new { item.Desc }, null)">
+            @item.Desc
+            <img src="@Url.Content(image)" height="150">
+        </a>
+
+    </div>
+
+        ViewBag.temp = item.Desc;
+
     }
-    @*<div class="col">
-        <a href="@Html.ActionLink("Buy Now", "Details", "Rentals", new {  })">
-            <img src="~/Content/images/Instruments/Trumpet.jpg" height="150" />
-            <p>Trumpet</p>
-        </a>
-    </div>
-    <div class="col">
-        <a href="@Url.Action("Details", "Rentals", new { instrumentName = "Trombone"})">
-            <img src="~/Content/images/Instruments/Trombone.jpg" height="150" />
-            <p>Trombone</p>
-        </a>
-    </div>
-    <div class="col">
-        <a href="@Url.Action("Details", "Rentals", new { instrumentName = "Tuba"})">
-            <img src="~/Content/images/Instruments/Tuba.jpg" height="150" />
-            <p>Tuba</p>
-        </a>
-    </div>
-    <div class="col">
-        <a href="@Url.Action("Details", "Rentals", new { instrumentName = "Flute"})">
-            <img src="~/Content/images/Instruments/Flute.jpg" height="150" />
-            <p>Flute</p>
-        </a>
-    </div>
-    <div class="col">
-        <a href="@Url.Action("Details", "Rentals", new { instrumentName = "Clarinet"})">
-            <img src="~/Content/images/Instruments/Clarinet.jpg" height="150" />
-            <p>Clarinet</p>
-        </a>
-    </div>
-    <div class="col">
-        <a href="@Url.Action("Details", "Rentals", new { instrumentName = "Saxophone"})">
-            <img src="~/Content/images/Instruments/Saxophone.jpg" height="150" />
-            <p>Saxophone</p>
-        </a>
-    </div>*@
+}
+
 </div>
+    @*<div class="col">
+            <a href="@Html.ActionLink("Buy Now", "Details", "Rentals", new {  })">
+                <img src="~/Content/images/Instruments/Trumpet.jpg" height="150" />
+                <p>Trumpet</p>
+            </a>
+        </div>
+        <div class="col">
+            <a href="@Url.Action("Details", "Rentals", new { instrumentName = "Trombone"})">
+                <img src="~/Content/images/Instruments/Trombone.jpg" height="150" />
+                <p>Trombone</p>
+            </a>
+        </div>
+        <div class="col">
+            <a href="@Url.Action("Details", "Rentals", new { instrumentName = "Tuba"})">
+                <img src="~/Content/images/Instruments/Tuba.jpg" height="150" />
+                <p>Tuba</p>
+            </a>
+        </div>
+        <div class="col">
+            <a href="@Url.Action("Details", "Rentals", new { instrumentName = "Flute"})">
+                <img src="~/Content/images/Instruments/Flute.jpg" height="150" />
+                <p>Flute</p>
+            </a>
+        </div>
+        <div class="col">
+            <a href="@Url.Action("Details", "Rentals", new { instrumentName = "Clarinet"})">
+                <img src="~/Content/images/Instruments/Clarinet.jpg" height="150" />
+                <p>Clarinet</p>
+            </a>
+        </div>
+        <div class="col">
+            <a href="@Url.Action("Details", "Rentals", new { instrumentName = "Saxophone"})">
+                <img src="~/Content/images/Instruments/Saxophone.jpg" height="150" />
+                <p>Saxophone</p>
+            </a>
+        </div>
+    </div>*@

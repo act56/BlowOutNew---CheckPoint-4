@@ -7,6 +7,7 @@ using BlowOutNew.Models;
 using BlowOutNew.DAL;
 
 
+
 namespace BlowOutNew.Controllers
 {
     public class RentalsController : Controller
@@ -15,7 +16,13 @@ namespace BlowOutNew.Controllers
         // GET: Rentals
         public ActionResult Index()
         {
-            return View();
+
+            ViewBag.temp = "Papa Smurf";
+
+            IEnumerable<Instrument> oInstrument = db.Database.SqlQuery<Instrument>
+                ("Select * FROM instrument");            
+
+            return View(oInstrument);
         }
 
         public ActionResult Rentals()

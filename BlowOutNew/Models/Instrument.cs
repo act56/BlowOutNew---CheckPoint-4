@@ -26,9 +26,8 @@ namespace BlowOutNew.Models
 
         [ForeignKey("client")]
         //[HiddenInput(DisplayValue = false)]
-        public virtual int clientID { get; set; }
+        public virtual int? clientID { get; set; }
         public virtual Client client { get; set; }
-
 
         [HiddenInput(DisplayValue =false)]
         public string image { get; set; }
