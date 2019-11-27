@@ -10,6 +10,8 @@ namespace BlowOutNew.Controllers
 {
     public class HomeController : Controller
     {
+        private BlowOutNewContext db = new BlowOutNewContext();
+
         public ActionResult Index()
         {
             return View();
@@ -28,5 +30,13 @@ namespace BlowOutNew.Controllers
 
             return View();
         }
+
+        public ActionResult Rentals()
+        {
+            return View(db.Instruments.ToList());
+        }
+
+  
+
     }
 }

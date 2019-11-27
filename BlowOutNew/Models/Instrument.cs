@@ -16,7 +16,7 @@ namespace BlowOutNew.Models
         public int instrumentID { get; set; }
 
         [Display(Name = "Instrument Name")]
-        public string Desc { get; set; }
+        public string description { get; set; }
 
         [Display(Name = "New or Used")]
         public string type { get; set; }
@@ -31,5 +31,6 @@ namespace BlowOutNew.Models
 
         [HiddenInput(DisplayValue =false)]
         public string image { get; set; }
+
     }
 }

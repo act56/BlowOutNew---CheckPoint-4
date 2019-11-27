@@ -35,9 +35,9 @@ namespace BlowOutNew.Controllers
             }
             return View(client);
         }
-
         // GET: Clients/Create
-        public ActionResult Create()
+        [HttpGet]
+        public ActionResult Create(int ID)
         {
             return View();
         }
@@ -47,16 +47,39 @@ namespace BlowOutNew.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "clientID,first_Name,last_Name,address,city,state,zip,email,phone")] Client client)
+        public ActionResult Create([Bind(Include = "clientID,first_Name,last_Name,address,city,state,zip,email,phone")] Client client, int ID)
         {
             if (ModelState.IsValid)
             {
                 db.Clients.Add(client);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+
+                //lookup instrument
+                Instrument instrument = db.Instruments.Find(ID);
+                //update instrument
+                instrument.clientID = client.clientID;
+                //db.Entry(client).State = EntityState.Modified;
+                //save changes
+
+                return RedirectToAction("Summary", new { ClientID = client.clientID, InstrumentID = instrument.instrumentID } );
             }
 
             return View(client);
+        }
+
+        public ActionResult Summary(int ClientID, int InstrumentID)
+        {
+            Client client = db.Clients.Find(ClientID);
+            Instrument instrument = db.Instruments.Find(InstrumentID);
+
+            ViewBag.Client = client;
+            ViewBag.Instrument = instrument.description;
+            ViewBag.Price = instrument.price;
+            ViewBag.TotalPrice = int.Parse(instrument.price);
+            ViewBag.Image = instrument.image;
+            ViewBag.Type = instrument.type;
+
+            return View();
         }
 
         // GET: Clients/Edit/5

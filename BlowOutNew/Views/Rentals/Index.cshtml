@@ -14,28 +14,10 @@
     @foreach (var item in Model)
     {
 
-        var image =
-        item.image;
-
-       if (ViewBag.temp == item.Desc)
-
-        {
-            ViewBag.temp = item.Desc;
-        }
-        else
-        {
     <div class="col">
-        @*@Html.ActionLink(item.Desc, "Details", "Rentals", new { item.Desc }, null)*@
-
-        <a href=" @Url.Action("Details", "Rentals", new {instName = item.Desc} , null )">@item.Desc
-            <img src="@Url.Content(image)" height="150">
-        </a>
-                
+         @Html.ActionLink(item.description, "Details", new {  instName = item.description, instimage= item.image })<img src="@Url.Content(item.image)" height="150" />
     </div>
 
-        ViewBag.temp = item.Desc;
-
-    }
 }
 
 </div>

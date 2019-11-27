@@ -3655,6 +3655,7 @@
     <Content Include="Views\Clients\Details.cshtml" />
     <Content Include="Views\Clients\Edit.cshtml" />
     <Content Include="Views\Clients\Index.cshtml" />
+    <Content Include="Views\Clients\Summary.cshtml" />
     <Content Include="Views\Instruments\Create.cshtml" />
     <Content Include="Views\Instruments\Delete.cshtml" />
     <Content Include="Views\Instruments\Details.cshtml" />
