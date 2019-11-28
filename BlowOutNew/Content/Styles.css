@@ -166,9 +166,12 @@ html, body, h1, h2, h3, h4 {
 
 .instrumentTitle {
     text-align: center;
-    background-color: #01b5ce;
+    background-color: #B80062;
     padding: 20px;
-    color:white;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 22px;
 }
 
 /*GRID CSS STARTS*/

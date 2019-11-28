@@ -12,14 +12,17 @@
 <hr />
 
 <h2>Order Details:</h2>
-<div style="margin-left: 3em">
-<h4><strong>Customer Name:</strong> @ViewBag.Client.first_Name @ViewBag.Client.last_Name</h4>
-<h4><strong>Instrument Name and Type:</strong> The instrument chosen was a @ViewBag.Instrument, and the condition is @ViewBag.Type. </h4>
-<img src="@ViewBag.Image" height="150" />
+<div style="margin-left:3em;">
+    <h4><strong>Customer Name:</strong> @ViewBag.Client.first_Name @ViewBag.Client.last_Name</h4>
+    <img src="@ViewBag.Image" height="150" />
+    <h4><strong>Instrument:</strong>  @ViewBag.Instrument </h4>
+    <h4><strong>Instrument Type:</strong> @ViewBag.Type</h4>
+</div><br />
 
-<h2 style="color:#0062B8">Transaction Amount</h2>
+ <div style="margin-left:10em;">
+<h2 style="color:#0062B8">Transaction Amount</h2><hr />
 <h4><strong>Monthly Price: </strong>$@ViewBag.Price.00</h4>
-<h4 class="jumbotron" style="background-color:#0062B8; width:45%; color:white;"><strong>Instrument Total Contract Amount:</strong><br /> $@(ViewBag.TotalPrice * 18).00 <br /></h4>
+<h4 class="jumbotron" style="background-color:#0062B8; width:60%; color:white;"><strong>Instrument Total Contract Amount:</strong>  $@(ViewBag.TotalPrice * 18).00 <br /></h4>
  <p><em>*This amount reflects the monthly rental amount multiplied by the total contact months (18)</em></p>
  </div>
 
