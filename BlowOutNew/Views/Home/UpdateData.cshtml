@@ -1,0 +1,76 @@
+﻿@model IEnumerable<BlowOutNew.Models.InstrumentClient>
+
+@{
+    ViewBag.Title = "UpdateData";
+}
+
+<h2 style="font-weight:bold">Update Client Data</h2>
+
+<table class="table" style="width:60%">
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td style="font-weight:bold">@Html.DisplayNameFor(model => model.description)</td>
+            <td>@Html.DisplayFor(modelItem => item.description)</td>
+        </tr>
+
+        <tr>
+            <td style="font-weight:bold">@Html.DisplayNameFor(model => model.type)</td>
+            <td>@Html.DisplayFor(modelItem => item.type)</td>
+        </tr>
+
+        <tr>
+            <td style="font-weight:bold">@Html.DisplayNameFor(model => model.price)</td>
+            <td>@Html.DisplayFor(modelItem => item.price)</td>
+        </tr>
+
+        <tr>
+            <td style="font-weight:bold">@Html.DisplayNameFor(model => model.first_Name)</td>
+            <td>@Html.DisplayFor(modelItem => item.first_Name)</td>
+        </tr>
+
+        <tr>
+            <td style="font-weight:bold">@Html.DisplayNameFor(model => model.last_Name)</td>
+            <td>@Html.DisplayFor(modelItem => item.last_Name)</td>
+        </tr>
+
+        <tr>
+            <td style="font-weight:bold">@Html.DisplayNameFor(model => model.address)</td>
+            <td>@Html.DisplayFor(modelItem => item.address)</td>
+        </tr>
+
+        <tr>
+            <td style="font-weight:bold">@Html.DisplayNameFor(model => model.city)</td>
+            <td>@Html.DisplayFor(modelItem => item.city)</td>
+        </tr>
+
+        <tr>
+            <td style="font-weight:bold">@Html.DisplayNameFor(model => model.state)</td>
+            <td>@Html.DisplayFor(modelItem => item.state)</td>
+        </tr>
+
+        <tr>
+            <td style="font-weight:bold">@Html.DisplayNameFor(model => model.zip)</td>
+            <td>@Html.DisplayFor(modelItem => item.zip)</td>
+        </tr>
+
+        <tr>
+            <td style="font-weight:bold">@Html.DisplayNameFor(model => model.email)</td>
+            <td>@Html.DisplayFor(modelItem => item.email)</td>
+        </tr>
+
+        <tr>
+            <td style="font-weight:bold">@Html.DisplayNameFor(model => model.phone)</td>
+            <td>@Html.DisplayFor(modelItem => item.phone)</td>
+        </tr>
+
+        <tr>
+            <td><br /><br />
+                @Html.HiddenFor(modelItem => item.clientID)
+                @Html.ActionLink("Edit", "Edit", new { id = item.instrumentID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.instrumentID })
+            </td>
+        </tr>
+    }
+
+</table>

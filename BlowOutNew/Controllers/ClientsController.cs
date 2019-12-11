@@ -58,10 +58,16 @@ namespace BlowOutNew.Controllers
                 Instrument instrument = db.Instruments.Find(ID);
                 //update instrument
                 instrument.clientID = client.clientID;
-                //db.Entry(client).State = EntityState.Modified;
-                //save changes
+                using (db)
+                {
+                    db.Instruments.Attach(instrument);
+                    db.Entry(instrument).Property(x => x.clientID).IsModified = true;
+                    db.SaveChanges();
+                }
+                    //db.Entry(client).State = EntityState.Modified;
+                    //save changes
 
-                return RedirectToAction("Summary", new { ClientID = client.clientID, InstrumentID = instrument.instrumentID } );
+                    return RedirectToAction("Summary", new { ClientID = client.clientID, InstrumentID = instrument.instrumentID });
             }
 
             return View(client);

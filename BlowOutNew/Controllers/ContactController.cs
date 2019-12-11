@@ -46,14 +46,14 @@ namespace BlowOutNew.Controllers
             return View();
         }
 
-        //Sending smtp emails
-        public ActionResult Email(ContactRequest contact)
-        {
-            ViewBag.Name = contact.firstName + " " + contact.lastName;
-            ViewBag.Email = contact.emailAddress;
+        ////Sending smtp emails
+        //public ActionResult Email(ContactRequest contact)
+        //{
+        //    ViewBag.Name = contact.firstName + " " + contact.lastName;
+        //    ViewBag.Email = contact.emailAddress;
 
-            return View("Email",contact);
-        }
+        //    return View("Email",contact);
+        //}
 
         //this code set up the email to send
         public void SendEmail(string toAddress, string fromAddress,
